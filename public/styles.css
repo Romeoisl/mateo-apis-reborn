@@ -1,0 +1,7 @@
+body { font-family: sans-serif; margin: 2em; background: #f6f8fa; }
+header { margin-bottom: 2em; }
+.news { border-bottom: 1px solid #ccc; margin-bottom: 1em; padding-bottom: 1em; }
+input, textarea { display: block; margin: 0.5em 0; padding: 0.5em; }
+button { padding: 0.5em 1em; }
+form { margin: 1em 0; }
+.api-widget { background: #e7f0fa; border-radius: 8px; padding: 1em; margin-bottom: 1em; }
