@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Profile</title></head>
+<body>
+  <h2>Edit Profile</h2>
+  <% if (error) { %><p style="color:green"><%= error %></p><% } %>
+  <form method="post" action="/profile">
+    <input name="name" value="<%= user.profile?.name || '' %>" placeholder="Name">
+    <input name="avatar" value="<%= user.profile?.avatar || '' %>" placeholder="Avatar URL">
+    <textarea name="bio" placeholder="Bio"><%= user.profile?.bio || '' %></textarea>
+    <button>Save</button>
+  </form>
+  <a href="/">Back to home</a>
+</body>
+</html>
