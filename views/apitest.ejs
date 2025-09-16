@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test APIs</title>
+  <script>
+    async function testAPI() {
+      const name = document.getElementById('apiname').value;
+      const param = document.getElementById('param').value;
+      const res = await fetch('/api/config.' + name, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: param
+      });
+      const data = await res.json();
+      document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+    }
+  </script>
+</head>
+<body>
+  <h2>Test an API</h2>
+  <select id="apiname">
+    <% apis.forEach(a => { %>
+      <option value="<%= a %>"><%= a %></option>
+    <% }); %>
+  </select>
+  <textarea id="param" placeholder='{"name":"World"}'></textarea>
+  <button onclick="testAPI()">Test</button>
+  <pre id="result"></pre>
+  <a href="/">Back to home</a>
+</body>
+</html>
